@@ -40,7 +40,7 @@ done
 
 if [ -z "$VERSION_TAG" ]; then
   # Get latest version from master in git
-  VERSION_TAG=$(curl -s "https://raw.githubusercontent.com/passsy/flutter_wrapper/master/version")
+  VERSION_TAG=$(curl -s "https://raw.githubusercontent.com/dustin-graham/flutter_wrapper/master/version")
 
   starts_with_v=$(echo "$VERSION_TAG" | cut -c 1)
   if [ "$starts_with_v" != "v" ]; then
@@ -89,7 +89,7 @@ fi
 ###
 printf "Downloading new flutterw\n"
 # Download latest flutterw version
-FLUTTERW_URL="https://raw.githubusercontent.com/passsy/flutter_wrapper/$VERSION_TAG/flutterw"
+FLUTTERW_URL="https://raw.githubusercontent.com/dustin-graham/flutter_wrapper/$VERSION_TAG/flutterw"
 curl -sfO "$FLUTTERW_URL"
 if [ "$?" != "0" ]; then
   printf "Couldn't downlaod flutterw from '$FLUTTERW_URL'\n"
